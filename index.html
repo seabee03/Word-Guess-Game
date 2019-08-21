@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Word Guess Game</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <section id="game-board">
+            <div id="title"><h1>Name that SpongeBob SquarePants Character</h1></div>
+            <div id="show-character">
+                <img id="show-character" src="assets/images/apu nahasapeemapetilon.png" alt="character-name">
+            </div>
+            <div id="word"></div>
+        </section>
+        <section id="content">
+            <!-- <div id="win-lose"></div> -->
+            <input type="text" name="guesses" id="win-lose" placeholder="Guess a letter to begin!">
+            <div id="wins">WINS: 0</div>
+            <div id="remaining-guesses">TRIES: 6</div>
+            <div id="letter-pool">
+                <p>AVAILABLE LETTERS:</p>
+                <div id="available-letters">abcdefghijklmnopqrstuvwxyz</div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/javascript/game.js" type="text/javascript">
+    </script>
+</body>
+</html>
