@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    outline-color: aqua;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: yellow;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@font-face {
+    font-family: Simpsonfont;
+    src: url(../fonts/Simpsonfont.otf);
+}
+
+@font-face {
+    font-family: "Alte DIN 1451";
+    src: url(../fonts/din1451alt.ttf);
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-height: 100%;
+    grid-template-areas: 'game-board' 'content';
+}
+
+#title {
+    grid-area: title;
+}
+
+h1 {
+    text-align: center;
+    font-family: Simpsonfont, sans-serif;
+    font-size: 5vh;
+    color: yellow;
+    margin: 0;
+    padding: 1.5rem 0;
+    text-shadow: -6px 5px 0 #000,
+                -4px 4px 0 #000,
+                -2px 2px 0 #000,
+                -3px 0 #000,
+                0 3px #000,
+                3px 0 #000,
+                0 -3px #000;
+}
+
+#game-board {
+    grid-area: game-board;
+    height: 50vh;
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    font-size: 3.5em;
+    text-align: center;
+    background: url(../images/simpsons-bg.jpg);
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
+    position: relative;
+}
+
+#show-character {
+    position: absolute;
+    z-index: 11;
+    height: 20vh;
+    left: 5rem;
+}
+
+img#character-img {
+    max-height: 20vh;
+    visibility: hidden;
+    filter: drop-shadow(4px 4px 0 #0003);
+}
+
+#word {
+    position: relative;
+    z-index: 10;
+    width: 100vw;
+    font-size: 9vw;
+    font-weight: 600;
+    padding: 2rem 0.5rem;
+    text-shadow: 4px 4px 0 #0003;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+
+#content {
+    grid-area: content;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1em;
+}
+
+#win-lose {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    grid-column: 1 / 3;
+    grid-row: 1;
+    height: 5vh;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    border: 0;
+    background-color: #0001;
+    text-transform: uppercase;
+    border-radius: 0.2em;
+}
+
+::-webkit-input-placeholder {
+    color:#0009;
+}
+
+::-moz-placeholder {
+    color: #0009;
+}
+
+:-ms-input-placeholder {
+    color: #0009;
+}
+
+:-moz-placeholder {
+    color: #0009;
+}
+
+#wins {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: end;
+    padding-right: 1rem;
+}
+
+#remaining-guesses {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    padding-left: 1rem;
+}
+
+#letter-pool {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    width: calc(100vw - 2em);
+    padding-bottom: 5rem;
+}
+
+.avail-let {
+    margin-bottom: 0.1em;
+}
+
+#available-letters {
+    font-size: 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#letter-pool p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
